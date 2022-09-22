@@ -8,12 +8,12 @@
   <title>Home</title>
   <!-- Incluir Bootstrap)-->
   <link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link rel="stylesheet" href="{%static 'css/myestilo.css'%}" />
 </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,13 +41,21 @@
   </header>
   <main>
     <p>
-      {% block contendio %}
+      {% block contendio1 %}
       <p>Aca estoy</p>
       {% endblock %}
     </p>
   </main>
-  <footer>
-    <p>Footer</p>
-  </footer>
+  <footer class="footer bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                <p class="text-muted small mb-4 mb-lg-0">&copy; Entrega1 - MatiasChavez</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

@@ -5,6 +5,10 @@ from django.http import HttpResponse
 
 
 def Estudiantes(request):
+    if request.method == "POST":
+       estudiante =  Estudiante(nombre = request.POST['nombre'], apellido = request.POST['apellido'], email = request.POST['email'])
+       estudiante.save()
+       return render(request, "home.html")
     return render(request, "Estudiantes.html")
 
 def Entregable(request):
