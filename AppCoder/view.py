@@ -15,8 +15,7 @@ def Estudiantes(request):
             return render(request, "Estudiantes.html", {"aux": "Agregado correctamente"})
     return render(request, "Estudiantes.html")
 
-def Entregable(request):
-    return render(request, "Entregable.html")
+
 
 def Profesores(request):
     if request.method == "POST":
@@ -28,14 +27,17 @@ def Profesores(request):
             return render(request, "Profesores.html", {"aux": "Agregado correctamente"})
     return render(request, "Profesores.html")
 
-def Curso(request):
-    return render(request, "Curso.html")
 
-def buscar_estudiante(request):
-    if request.GET["email"]:
-        email = request.GET["email"]
-        estudiantes = Estudiante.objects.filter(email__icontains = email) 
-        return render(request, "Estudiantes.html", {"estudiantes": estudiantes})
-    else:
-        respuesta = "No enviaste datos"
-    return HttpResponse(respuesta)
+
+def Cursos(request):
+    if request.method == "POST":
+        if(request.POST['nombre']==""or request.POST['camada']==""):
+            return render(request, "Cursos.html", {"aux": "Falto agregar un valor"}) 
+        else:
+            curso =  Curso(nombre = request.POST['nombre'], camada = request.POST['camada'])
+            curso.save()
+            return render(request, "Cursos.html", {"aux": "Agregado correctamente"})
+    return render(request, "Cursos.html")
+
+def Entregable(request):
+    return render(request, "Entregable.html")

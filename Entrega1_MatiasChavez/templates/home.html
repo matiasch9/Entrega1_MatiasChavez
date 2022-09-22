@@ -23,7 +23,7 @@
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/AppCoder/Curso">Curso</a>
+              <a class="nav-link" href="/AppCoder/Cursos">Cursos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/AppCoder/Entregable">Entregable</a>
@@ -42,11 +42,31 @@
   <main>
     <p>
       {% block contendio1 %}
-     <p>Yo de nuevo</p>
-
-     <h2> Lista de Profesores Coder</h2>
+    <h3>Cursos activos</h3>
+    <div>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Camada</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in cursos %}
+          <tr>
+          <td>{{c.nombre}}</td>
+          <td>{{c.camada}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div>
+        <br> <br>
+      </div>
+     </div>
+     <h3>Lista de Profesores Coder</h3>
      <div>
-      <table class="table">
+      <table class="table table-sm">
         <thead>
           <tr>
             <th scope="col">Nombre</th>
@@ -56,7 +76,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for c in data %}
+          {% for c in profesores %}
           <tr>
           <td>{{c.nombre}}</td>
           <td>{{c.apellido}}</td>
