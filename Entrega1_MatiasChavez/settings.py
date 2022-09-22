@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'AppCoder'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'Entrega1_MatiasChavez.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [f'{BASE_DIR}/Entrega1_MatiasChavez/templates',f'{BASE_DIR}/AppCoder/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
