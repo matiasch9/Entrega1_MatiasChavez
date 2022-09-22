@@ -39,5 +39,11 @@ def Cursos(request):
             return render(request, "Cursos.html", {"aux": "Agregado correctamente"})
     return render(request, "Cursos.html")
 
-def Entregable(request):
-    return render(request, "Entregable.html")
+
+def buscar_estudiante(request):
+    if request.GET["email"]:
+        email = request.GET["email"]
+        estudiantes = Estudiante.objects.filter(email__icontains = email) 
+        return render(request, "Estudiantes.html", {"estudiantes": estudiantes})
+    else:
+       return render(request, "Estudiantes.html", {"NoMail": "No escribio ningun mail"})
