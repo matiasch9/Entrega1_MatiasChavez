@@ -32,7 +32,7 @@
               <a class="nav-link" href="/AppCoder/Estudiantes">Estudiantes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/AppCoder/Profesor">Profesor</a>
+              <a class="nav-link" href="/AppCoder/Profesores">Profesores</a>
             </li>
           </ul>
         </div>
@@ -42,7 +42,32 @@
   <main>
     <p>
       {% block contendio1 %}
-      <p>Aca estoy</p>
+     <p>Yo de nuevo</p>
+
+     <h2> Lista de Profesores Coder</h2>
+     <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Profesor</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in data %}
+          <tr>
+          <td>{{c.nombre}}</td>
+          <td>{{c.apellido}}</td>
+          <td>{{c.email}}</td>
+          <td>{{c.profesion}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+     </div>
       {% endblock %}
     </p>
   </main>

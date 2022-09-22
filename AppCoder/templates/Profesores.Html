@@ -4,12 +4,13 @@
 <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
 {% block contendio1 %}
 <div class="contenidoEstudiantes">
-    <form class="formDataEstudiantes" action="/AppCoder/Estudiantes/" method="POST"> {% csrf_token %}
+    <form class="formDataEstudiantes" action="/AppCoder/Profesores/" method="POST"> {% csrf_token %}
         <input type="text" name="nombre" placeholder="Nombre">
         <input type="text" name="apellido" placeholder="Apellido">
         <input type="email" name="email" placeholder="Email">
+        <input type="text" name="profesion" placeholder="Profesion">
         <button type="submit" class="btn btn-primary btndj">Registrar</button>
         <p>{{aux}}</p>
     </form>
 </div>
-{% endblock %}  
+{% endblock %}
